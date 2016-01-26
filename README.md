@@ -1,6 +1,8 @@
 # Vidja
 .net video creator library
 
+Example: https://youtu.be/Q_a-STbdDYU
+
 First download FFmpeg from http://ffmpeg.org.
 
 Create a command line project.
@@ -58,4 +60,3 @@ Implement `RenderFrame(double t)` so that given a time from 0 to `t` return a bi
 
 Run `VidjaHelloWorld.exe` which will generate `Vidja.mp4` and view it in your favourite video player.
 
-Example: https://youtu.be/Q_a-STbdDYU
