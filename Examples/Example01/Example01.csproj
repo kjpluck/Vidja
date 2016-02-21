@@ -51,7 +51,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Vidja\Vidja.csproj">
+    <ProjectReference Include="..\..\Vidja\Vidja.csproj">
       <Project>{f2355051-c734-486e-b4b7-2f7d05872ba4}</Project>
       <Name>Vidja</Name>
     </ProjectReference>
