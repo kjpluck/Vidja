@@ -17,46 +17,47 @@ Set the `Width`, `Height`, `FPS` (Frames per second), `Duration` (in seconds) fi
 
 Implement `RenderFrame(double t)` so that given a time from 0 to `t` return a bitmap of the above width and height.
 
-    using System.Drawing;
-    using Vidja;
+##Example 1
 
-    namespace VidjaHelloWorld
+![Alt text](/Examples/Output/Eg01.gif?raw=true "Optional Title")
+
+We start with an easy one. In `RenderFrame` we just draw a red circle, whose radius depends on the time `t`:
+
+```c#
+using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using Vidja;
+
+namespace Example01
+{
+    public class Program
     {
-        public class Program
+        public static void Main()
         {
-            public static void Main(string[] args)
-            {
-                Vidja.Vidja.Generate(new HelloWorld());
-            }
+            Vidja.Vidja.Generate(new Eg01(), "Eg01.gif");
         }
-
-        public class HelloWorld:IVidja
-        {
-
-            public int Width { get; } = 1000;
-            public int Height { get; } = 1000;
-            public int Fps { get; } = 25;
-            public double Duration { get; } = 10;
-
-            public Bitmap RenderFrame(double t)
-            {
-
-                var bmp = new Bitmap(Width, Height);
-                var graphics = Graphics.FromImage(bmp);
-
-                graphics.DrawString($"Hello, World! {(int)t}", new Font("Arial", 32), new SolidBrush(Color.GreenYellow),
-                    new Rectangle(0, 0, Width, Height), _centeredText);
-
-                return bmp;
-            }
-
-            private readonly StringFormat _centeredText = new StringFormat
-            {
-                LineAlignment = StringAlignment.Center,
-                Alignment = StringAlignment.Center
-            };
-        }
+        
     }
 
-Run `VidjaHelloWorld.exe` which will generate `Vidja.mp4` and view it in your favourite video player.
+    public class Eg01:IVidja
+    {
+        public int Width { get; } = 128;
+        public int Height { get; } = 128;
+        public int Fps { get; } = 15;
+        public double Duration { get; } = 2;
+
+        public Bitmap RenderFrame(double t)
+        {
+            var bmp = new Bitmap(Width, Height);
+            var graphics = Graphics.FromImage(bmp);
+            graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            var radius = (float)(Width * (1 + Math.Pow((t * (Duration - t)), 2)) / 6);
+            graphics.FillCircle(Brushes.Red, 64, 64, radius);
+            return bmp;
+        }
+    }
+}
+```
 
