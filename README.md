@@ -1,6 +1,8 @@
 # Vidja
 .net video creator library
 
+Inspired/ported/stolen/plagiarised from http://zulko.github.io/blog/2014/09/20/vector-animations-with-python/
+
 Example: https://youtu.be/Q_a-STbdDYU
 
 First download FFmpeg from http://ffmpeg.org.
