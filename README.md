@@ -191,6 +191,8 @@ namespace Example03
 
 ## Example 5
 
+![Stacked circles](/Examples/Output/Eg05.gif?raw=true)
+
 This is a derivative of a Dave Whyte animation. It is made of stacked circles moving towards the picture’s border, with carefully chosen sizes, starting times, and colors. The black around the picture is simply a big circle with no fill and a very very thick black border.
 
 ```c#
