@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>vidja</id>
-    <version>1.0.1.0</version>
-    <title>Vidja video creator</title>
+    <version>1.0.3.0</version>
+    <title>Vidja animation creator</title>
     <authors>Kevin Pluck</authors>
     <owners>Kevin Pluck</owners>
     <projectUrl>https://github.com/kjpluck/Vidja</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A video creation library.</description>
+    <description>An animation creation library.</description>
     <copyright>Copyright 2016</copyright>
-    <tags>Video Animation</tags>
+    <tags>Video Animation GIF</tags>
   </metadata>
 </package>
